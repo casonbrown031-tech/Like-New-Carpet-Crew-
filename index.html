@@ -137,34 +137,47 @@
       color: var(--white);
     }
 
+
     /* ------------------------------
-       PROMO SECTION (from simple page)
+       IMAGE SHOWCASE (NEW)
+    ------------------------------ */
+    .image-showcase {
+      background: var(--white);
+      padding: 70px 20px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .image-card {
+      background: var(--grey-light);
+      border: 2px dashed var(--grey-mid);
+      border-radius: 10px;
+      padding: 20px;
+      height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--blue-mid);
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+
+    /* ------------------------------
+       PROMO SECTION
     ------------------------------ */
     .promo-section {
       background: linear-gradient(180deg, #e6e6e6, #f5f5f5);
       text-align: center;
       padding: 70px 20px;
-    }
-
-    .hero-image-wrapper {
-      max-width: 550px;
-      margin: 0 auto 35px auto;
-      padding: 18px;
-      background: white;
-      border-radius: 6px;
-      border: 3px solid var(--grey-mid);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hero-image-wrapper:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-    }
-
-    .promo-section img {
-      width: 60%;
-      border-radius: 4px;
     }
 
     .promo-section h2 {
@@ -173,149 +186,14 @@
       color: var(--blue-dark);
     }
 
+    .promo-section img {
+      width: 60%;
+      border-radius: 4px;
+    }
+
     .cta-button {
       background-color: var(--blue-bright);
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+      colo
 
-    .cta-button:hover {
-      background-color: var(--blue-mid);
-    }
 
-    /* ------------------------------
-       SEASONAL TIPS (from simple page)
-    ------------------------------ */
-    .seasonal-section {
-      background: var(--white);
-      padding: 70px 20px;
-    }
-
-    .seasonal-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .seasonal-card {
-      background: var(--grey-light);
-      border: 1px solid var(--grey-mid);
-      border-radius: 10px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .seasonal-card p {
-      display: none;
-      margin-top: 15px;
-      color: var(--blue-dark);
-    }
-
-    /* ------------------------------
-       FOOTER
-    ------------------------------ */
-    .site-footer {
-      background: var(--blue-dark);
-      color: var(--white);
-      padding: 40px 20px;
-      text-align: center;
-    }
-  </style>
-
-  <script>
-    function toggleFiber() {
-      const text = document.getElementById("fiber-text");
-      text.style.display = text.style.display === "none" ? "block" : "none";
-    }
-
-    function toggleCitrus() {
-      const text = document.getElementById("citrus-text");
-      text.style.display = text.style.display === "none" ? "block" : "none";
-    }
-  </script>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="brand">
-      <span class="logo-mark">LN</span>
-      <span class="logo-name">Like New Carpet Crew</span>
-    </div>
-
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="process.html">Our Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="guarantee.html">Guarantee</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO (BOLD + CENTERED) -->
-  <section class="hero">
-    <h1>Low-moisture carpet cleaning that uses science, not flooding.</h1>
-    <p class="hero-subtitle">
-      We deep-clean carpets using chemistry, mechanical agitation, and controlled moisture —
-      so your home dries fast and stays cleaner longer.
-    </p>
-
-    <ul class="hero-benefits">
-      <li>Carpets dry in 1–2 hours</li>
-      <li>No mold or mildew risk from over-wetting</li>
-      <li>No sticky residue to attract new dirt</li>
-      <li>Protects carpet fibers and padding</li>
-      <li>100% satisfaction guarantee</li>
-    </ul>
-
-    <div class="hero-actions">
-      <a href="contact.html#booking" class="btn btn-secondary">Book a Cleaning</a>
-    </div>
-  </section>
-
-  <!-- PROMO SECTION -->
- 
-  <section class="promo-section">
-    <div class="promo-inner">
-      <h2>Fresh Floors, Fresh Start</h2>
-      <p>We bring professionalism and care to every carpet we clean.</p>
-    </div>
-  </section>
-
-  <!-- SEASONAL TIPS -->
-  <section class="seasonal-section">
-    <h2 style="text-align:center;">Seasonal Tips & Protection</h2>
-    <p style="text-align:center;">Smart ways to protect your carpets — and your home — year-round.</p>
-
-    <div class="seasonal-grid">
-
-      <div class="seasonal-card">
-        <h3>Fiber Protection Treatment</h3>
-        <button class="cta-button" onclick="toggleFiber()">Learn More</button>
-        <p id="fiber-text">Adds a protective barrier to help carpets resist future stains, salt, and moisture.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
-  </footer>
-
-</body>
-
-</html>
 
