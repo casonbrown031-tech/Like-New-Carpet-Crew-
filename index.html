@@ -99,8 +99,8 @@
       background: var(--white);
       padding: 12px 18px;
       margin-bottom: 10px;
-      border-radius: 6px;
       border-left: 4px solid var(--blue-mid);
+      border-radius: 6px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     }
 
@@ -137,9 +137,8 @@
       color: var(--white);
     }
 
-
     /* ------------------------------
-       IMAGE SHOWCASE (NEW)
+       IMAGE SHOWCASE (NEW) Option 2
     ------------------------------ */
     .image-showcase {
       background: var(--white);
@@ -154,22 +153,13 @@
       margin: 0 auto;
     }
 
-    .image-card {
-      background: var(--grey-light);
-      border: 2px dashed var(--grey-mid);
-      border-radius: 10px;
-      padding: 20px;
+    .image-grid img {
+      width: 100%;
       height: 260px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--blue-mid);
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-align: center;
+      object-fit: cover;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
-
 
     /* ------------------------------
        PROMO SECTION
@@ -308,8 +298,8 @@
     </p>
 
     <div class="image-grid">
-      <div class="image-card">Image Placeholder 1</div>
-      <div class="image-card">Image Placeholder 2</div>
+      <img src="IMAGE_URL_1_HERE" alt="Carpet Cleaning Example 1">
+      <img src="IMAGE_URL_2_HERE" alt="Carpet Cleaning Example 2">
     </div>
   </section>
 
@@ -340,6 +330,8 @@
 
 </body>
 </html>
+
+
 
 
 
