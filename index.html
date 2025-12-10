@@ -193,7 +193,154 @@
 
     .cta-button {
       background-color: var(--blue-bright);
-      colo
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+      background-color: var(--blue-mid);
+    }
+
+    /* ------------------------------
+       SEASONAL TIPS
+    ------------------------------ */
+    .seasonal-section {
+      background: var(--white);
+      padding: 70px 20px;
+    }
+
+    .seasonal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .seasonal-card {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-mid);
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .seasonal-card p {
+      display: none;
+      margin-top: 15px;
+      color: var(--blue-dark);
+    }
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+    .site-footer {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function toggleFiber() {
+      const text = document.getElementById("fiber-text");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-mark">LN</span>
+      <span class="logo-name">Like New Carpet Crew</span>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guarantee.html">Guarantee</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Low-moisture carpet cleaning that uses science, not flooding.</h1>
+    <p class="hero-subtitle">
+      We deep-clean carpets using chemistry, mechanical agitation, and controlled moisture —
+      so your home dries fast and stays cleaner longer.
+    </p>
+
+    <ul class="hero-benefits">
+      <li>Carpets dry in 1–2 hours</li>
+      <li>No mold or mildew risk from over-wetting</li>
+      <li>No sticky residue to attract new dirt</li>
+      <li>Protects carpet fibers and padding</li>
+      <li>100% satisfaction guarantee</li>
+    </ul>
+
+    <div class="hero-actions">
+      <a href="contact.html#booking" class="btn btn-secondary">Book a Cleaning</a>
+    </div>
+  </section>
+
+  <!-- IMAGE SHOWCASE (NEW) -->
+  <section class="image-showcase">
+    <h2 style="text-align:center; color: var(--blue-dark); margin-bottom: 20px;">
+      Our Work Speaks for Itself
+    </h2>
+    <p style="text-align:center; margin-bottom: 40px;">
+      Here’s a preview of the results our customers love.
+    </p>
+
+    <div class="image-grid">
+      <div class="image-card">Image Placeholder 1</div>
+      <div class="image-card">Image Placeholder 2</div>
+    </div>
+  </section>
+
+  <!-- PROMO SECTION -->
+  <section class="promo-section">
+    <h2>Fresh Floors, Fresh Start</h2>
+    <p>We bring professionalism and care to every carpet we clean.</p>
+  </section>
+
+  <!-- SEASONAL TIPS -->
+  <section class="seasonal-section">
+    <h2 style="text-align:center;">Seasonal Tips & Protection</h2>
+    <p style="text-align:center;">Smart ways to protect your carpets — and your home — year-round.</p>
+
+    <div class="seasonal-grid">
+      <div class="seasonal-card">
+        <h3>Fiber Protection Treatment</h3>
+        <button class="cta-button" onclick="toggleFiber()">Learn More</button>
+        <p id="fiber-text">Adds a protective barrier to help carpets resist future stains, salt, and moisture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
 
 
 
