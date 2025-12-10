@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-page="faq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ | Like New Carpet Crew</title>
+
+  <style>
+    /* ------------------------------
+       GLOBAL BRAND COLORS & RESET
+    ------------------------------ */
+    :root {
+      --blue-dark: #003366;
+      --blue-mid: #0055aa;
+      --blue-bright: #0077ff;
+      --grey-light: #f0f4f8;
+      --grey-mid: #d9e2ec;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--grey-light);
+      color: var(--blue-dark);
+      line-height: 1.6;
+    }
+
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
+    .site-header {
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+      padding: 20px;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-mark {
+      background: var(--white);
+      color: var(--blue-dark);
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .site-nav a:hover {
+      color: var(--blue-bright);
+    }
+
+    /* ------------------------------
+       HERO — CENTERED + BOLD
+    ------------------------------ */
+    .hero {
+      background: linear-gradient(180deg, var(--white), var(--grey-light));
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--blue-dark);
+      margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    /* ------------------------------
+       FAQ SECTION (styled like hero benefits)
+    ------------------------------ */
+    .faq-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      padding: 18px 20px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border-left: 4px solid var(--blue-mid);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: #333;
+    }
+
+    /* ------------------------------
+       CTA SECTION
+    ------------------------------ */
+    .section-cta {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin: 8px;
+    }
+
+    .btn-primary {
+      background: var(--blue-mid);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--blue-mid);
+      border: 2px solid var(--blue-mid);
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue-mid);
+      color: var(--white);
+    }
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+    .site-footer {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-mark">LN</span>
+      <span class="logo-name">Like New Carpet Crew</span>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guarantee.html">Guarantee</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Frequently Asked Questions</h1>
+    <p class="hero-subtitle">
+      Clear answers about low-moisture carpet cleaning, dry times, pets, and more.
+    </p>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+
+    <div class="faq-item">
+      <div class="faq-question">How long does it take for carpets to dry?</div>
+      <div class="faq-answer">
+        <p>Most carpets dry in 1–2 hours depending on ventilation, humidity, and carpet type.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is your cleaning safe for kids and pets?</div>
+      <div class="faq-answer">
+        <p>Yes — once dry, carpets are safe for kids and pets. Our process avoids over-wetting.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you offer odor treatment for pet accidents?</div>
+      <div class="faq-answer">
+        <p>Yes — we use targeted chemistry designed to help with pet urine and odor sources.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is low-moisture cleaning as effective as steam cleaning?</div>
+      <div class="faq-answer">
+        <p>Often more effective — no residue, no over-wetting, and faster dry times.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Will there be sticky residue left behind?</div>
+      <div class="faq-answer">
+        <p>No — we neutralize and groom carpets so no detergent residue remains.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How far in advance should I book?</div>
+      <div class="faq-answer">
+        <p>A week or two is ideal, especially for move-outs or event dates.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <h2>Still Have Questions?</h2>
+    <p>We’re happy to talk through your specific carpet issues and recommend a solution.</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
