@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Like New Carpet Crew | Low-Moisture Carpet Cleaning</title>
+
+  <style>
+    /* ------------------------------
+       GLOBAL BRAND COLORS & RESET
+    ------------------------------ */
+    :root {
+      --blue-dark: #003366;
+      --blue-mid: #0055aa;
+      --blue-bright: #0077ff;
+      --grey-light: #f0f4f8;
+      --grey-mid: #d9e2ec;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--grey-light);
+      color: var(--blue-dark);
+      line-height: 1.6;
+    }
+
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
+    .site-header {
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+      padding: 20px;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-mark {
+      background: var(--white);
+      color: var(--blue-dark);
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .site-nav a:hover {
+      color: var(--blue-bright);
+    }
+
+    /* ------------------------------
+       HERO — CENTERED + BOLD
+    ------------------------------ */
+    .hero {
+      background: linear-gradient(180deg, var(--white), var(--grey-light));
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--blue-dark);
+      margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    .hero-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .hero-benefits li {
+      background: var(--white);
+      padding: 12px 18px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border-left: 4px solid var(--blue-mid);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin: 8px;
+    }
+
+    .btn-primary {
+      background: var(--blue-mid);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--blue-mid);
+      border: 2px solid var(--blue-mid);
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue-mid);
+      color: var(--white);
+    }
+
+    /* ------------------------------
+       PROMO SECTION (from simple page)
+    ------------------------------ */
+    .promo-section {
+      background: linear-gradient(180deg, #e6e6e6, #f5f5f5);
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero-image-wrapper {
+      max-width: 550px;
+      margin: 0 auto 35px auto;
+      padding: 18px;
+      background: white;
+      border-radius: 6px;
+      border: 3px solid var(--grey-mid);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-image-wrapper:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .promo-section img {
+      width: 60%;
+      border-radius: 4px;
+    }
+
+    .promo-section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: var(--blue-dark);
+    }
+
+    .cta-button {
+      background-color: var(--blue-bright);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+      background-color: var(--blue-mid);
+    }
+
+    /* ------------------------------
+       SEASONAL TIPS (from simple page)
+    ------------------------------ */
+    .seasonal-section {
+      background: var(--white);
+      padding: 70px 20px;
+    }
+
+    .seasonal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .seasonal-card {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-mid);
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .seasonal-card p {
+      display: none;
+      margin-top: 15px;
+      color: var(--blue-dark);
+    }
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+    .site-footer {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function toggleFiber() {
+      const text = document.getElementById("fiber-text");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleCitrus() {
+      const text = document.getElementById("citrus-text");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-mark">LN</span>
+      <span class="logo-name">Like New Carpet Crew</span>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guarantee.html">Guarantee</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO (BOLD + CENTERED) -->
+  <section class="hero">
+    <h1>Low-moisture carpet cleaning that uses science, not flooding.</h1>
+    <p class="hero-subtitle">
+      We deep-clean carpets using chemistry, mechanical agitation, and controlled moisture —
+      so your home dries fast and stays cleaner longer.
+    </p>
+
+    <ul class="hero-benefits">
+      <li>Carpets dry in 1–2 hours</li>
+      <li>No mold or mildew risk from over-wetting</li>
+      <li>No sticky residue to attract new dirt</li>
+      <li>Protects carpet fibers and padding</li>
+      <li>100% satisfaction guarantee</li>
+    </ul>
+
+    <div class="hero-actions">
+      <a href="contact.html#booking" class="btn btn-secondary">Book a Cleaning</a>
+    </div>
+  </section>
+
+  <!-- PROMO SECTION -->
+ 
+  <section class="promo-section">
+    <div class="promo-inner">
+      <h2>Fresh Floors, Fresh Start</h2>
+      <p>We bring professionalism and care to every carpet we clean or install.</p>
+    </div>
+  </section>
+
+  <!-- SEASONAL TIPS -->
+  <section class="seasonal-section">
+    <h2 style="text-align:center;">Seasonal Tips & Protection</h2>
+    <p style="text-align:center;">Smart ways to protect your carpets — and your home — year-round.</p>
+
+    <div class="seasonal-grid">
+
+      <div class="seasonal-card">
+        <h3>Fiber Protection Treatment</h3>
+        <button class="cta-button" onclick="toggleFiber()">Learn More</button>
+        <p id="fiber-text">Adds a protective barrier to help carpets resist future stains, salt, and moisture.</p>
+      </div>
+
+      <div class="seasonal-card">
+        <h3>Winterizing Your Citrus</h3>
+        <button class="cta-button" onclick="toggleCitrus()">How to Prepare</button>
+        <p id="citrus-text">Protect your citrus trees this winter with proper insulation, watering routines, and freeze‑prevention techniques.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
