@@ -66,7 +66,7 @@
     }
 
     /* ------------------------------
-       HERO — CENTERED + BOLD
+       HERO
     ------------------------------ */
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
@@ -117,15 +117,6 @@
       margin: 8px;
     }
 
-    .btn-primary {
-      background: var(--blue-mid);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-dark);
-    }
-
     .btn-secondary {
       background: var(--white);
       color: var(--blue-mid);
@@ -138,7 +129,7 @@
     }
 
     /* ------------------------------
-       IMAGE SHOWCASE (NEW) Option 2
+       IMAGE SHOWCASE
     ------------------------------ */
     .image-showcase {
       background: var(--white);
@@ -176,27 +167,6 @@
       color: var(--blue-dark);
     }
 
-    .promo-section img {
-      width: 60%;
-      border-radius: 4px;
-    }
-
-    .cta-button {
-      background-color: var(--blue-bright);
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .cta-button:hover {
-      background-color: var(--blue-mid);
-    }
-
     /* ------------------------------
        SEASONAL TIPS
     ------------------------------ */
@@ -228,6 +198,25 @@
     }
 
     /* ------------------------------
+       CTA BUTTON (GLOBAL)
+    ------------------------------ */
+    .cta-button {
+      background-color: var(--blue-bright);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+      background-color: var(--blue-mid);
+    }
+
+    /* ------------------------------
        FOOTER
     ------------------------------ */
     .site-footer {
@@ -241,6 +230,11 @@
   <script>
     function toggleFiber() {
       const text = document.getElementById("fiber-text");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleCRB() {
+      const text = document.getElementById("crb-text");
       text.style.display = text.style.display === "none" ? "block" : "none";
     }
   </script>
@@ -288,7 +282,7 @@
     </div>
   </section>
 
-  <!-- IMAGE SHOWCASE (NEW) -->
+  <!-- IMAGE SHOWCASE -->
   <section class="image-showcase">
     <h2 style="text-align:center; color: var(--blue-dark); margin-bottom: 20px;">
       Our Work Speaks for Itself
@@ -299,7 +293,7 @@
 
     <div class="image-grid">
       <img src="https://www.cciaustria.com/fileadmin/Tmpl/usermedia/IMAGE/IMAGE-SAUBER.jpg" alt="Carpet Cleaning Example 1">
-      <img src="https://i.ytimg.com/vi/LOgU6j71eWE/maxresdefault.jpg" alt="Carpet Cleaning Example 2">
+      <img src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/image2.jpg" alt="Carpet Cleaning Example 2">
     </div>
   </section>
 
@@ -310,18 +304,25 @@
   </section>
 
   <!-- SEASONAL TIPS -->
-  <section class="seasonal-section">
-    <h2 style="text-align:center;">Seasonal Tips & Protection</h2>
-    <p style="text-align:center;">Smart ways to protect your carpets — and your home — year-round.</p>
+<div class="seasonal-card">
+  <h3>Deep Cleaning Technology</h3>
 
-    <div class="seasonal-grid">
-      <div class="seasonal-card">
-        <h3>Fiber Protection Treatment</h3>
-        <button class="cta-button" onclick="toggleFiber()">Learn More</button>
-        <p id="fiber-text">Adds a protective barrier to help carpets resist future stains, salt, and moisture.</p>
-      </div>
-    </div>
-  </section>
+  <div style="display:flex; justify-content:center; gap:15px; margin-top:10px;">
+    <button class="cta-button" onclick="toggleFiber()">Fiber Protection</button>
+    <button class="cta-button" onclick="toggleCRB()">CRB Process</button>
+  </div>
+
+  <p id="fiber-text" style="display:none;">
+    Adds a protective barrier to help carpets resist future stains, salt, and moisture.
+  </p>
+
+  <p id="crb-text" style="display:none;">
+    Our low-moisture cleaning process delivers a deep, restorative clean without soaking your carpets.
+    CRB (Counter-Rotating Brush) technology lifts, separates, and revives carpet fibers at a level
+    traditional steam cleaners simply can’t reach.
+  </p>
+</div>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -330,6 +331,7 @@
 
 </body>
 </html>
+
 
 
 
