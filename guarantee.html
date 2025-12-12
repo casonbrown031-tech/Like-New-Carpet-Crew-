@@ -70,7 +70,7 @@
     }
 
     /* ------------------------------
-       PAGE HEADER (GUARANTEE)
+       PAGE HEADER
     ------------------------------ */
     .page-header {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
@@ -135,6 +135,28 @@
     }
 
     /* ------------------------------
+       IMAGE PLACEHOLDER GALLERY
+    ------------------------------ */
+    .image-row {
+      max-width: 900px;
+      margin: 40px auto 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 420px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid var(--grey-mid);
+      background: #ddd;
+    }
+
+    /* ------------------------------
        CTA SECTION
     ------------------------------ */
     .section-cta {
@@ -147,39 +169,6 @@
       font-size: 2.2rem;
       margin-bottom: 10px;
       color: var(--blue-dark);
-    }
-
-    .cta-actions {
-      margin-top: 25px;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin: 8px;
-    }
-
-    .btn-primary {
-      background: var(--blue-mid);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-dark);
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--blue-mid);
-      border: 2px solid var(--blue-mid);
-    }
-
-    .btn-secondary:hover {
-      background: var(--blue-mid);
-      color: var(--white);
     }
 
     /* ------------------------------
@@ -257,14 +246,21 @@
     <h2>Experience Guaranteed Low-Moisture Cleaning</h2>
     <p>Let’s start with a free estimate and walk you through our process.</p>
 
+    <!-- IMAGE PLACEHOLDERS ADDED HERE -->
+    <div class="image-row">
+      <img src="your-image-url-1.jpg" alt="Placeholder 1">
+      <img src="your-image-url-2.jpg" alt="Placeholder 2">
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
   </footer>
 
 </body>
-
 </html>
+
 
 
 
