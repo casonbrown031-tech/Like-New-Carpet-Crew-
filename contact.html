@@ -2,19 +2,19 @@
 <html lang="en" data-page="contact">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Us | Like New Carpet Crew</title>
 
   <style>
-    /* ------------------------------------
-       GLOBAL BRAND SYSTEM
-    ------------------------------------ */
+    /* ------------------------------
+       GLOBAL BRAND COLORS & RESET
+    ------------------------------ */
     :root {
       --blue-dark: #003366;
       --blue-mid: #0055aa;
-      --blue-bright: #0066cc;
-      --grey-light: #f0f0f0;
-      --grey-mid: #cccccc;
+      --blue-bright: #0077ff;
+      --grey-light: #f0f4f8;
+      --grey-mid: #d9e2ec;
       --white: #ffffff;
     }
 
@@ -26,69 +26,74 @@
       line-height: 1.6;
     }
 
-    /* ------------------------------------
+    /* ------------------------------
        HEADER
-    ------------------------------------ */
-    header.site-header {
+    ------------------------------ */
+    .site-header {
       background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+      padding: 20px;
       color: var(--white);
-      padding: 30px 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    header .logo-mark {
+    .logo-mark {
       background: var(--white);
       color: var(--blue-dark);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 4px;
       font-weight: bold;
-      margin-right: 8px;
+      margin-right: 10px;
     }
 
-    /* ------------------------------------
-       NAVIGATION
-    ------------------------------------ */
-    nav.site-nav {
-      background-color: var(--white);
+    .site-nav ul {
+      list-style: none;
       display: flex;
-      justify-content: center;
-      padding: 12px;
-      border-bottom: 2px solid var(--grey-mid);
+      gap: 20px;
+      margin: 0;
+      padding: 0;
     }
 
-    nav.site-nav a {
-      color: var(--blue-dark);
+    .site-nav a {
+      color: var(--white);
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      font-size: 1.1em;
+      font-weight: 600;
     }
 
-    nav.site-nav a:hover {
-      color: var(--blue-mid);
+    .site-nav a:hover {
+      color: var(--blue-bright);
     }
 
-    /* ------------------------------------
-       CARD SECTION (Unified Layout)
-    ------------------------------------ */
-    .card-section {
+    /* ------------------------------
+       CONTACT CARD
+    ------------------------------ */
+    .contact-card {
       background: var(--white);
-      padding: 60px 20px;
-      margin: 40px auto;
       max-width: 900px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      margin: 60px auto;
+      padding: 50px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .card-section h2 {
+    .contact-card h2 {
       text-align: center;
-      font-size: 2.4em;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: var(--blue-dark);
     }
 
-    /* ------------------------------------
-       FORM STYLING
-    ------------------------------------ */
+    .contact-subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    /* ------------------------------
+       FORM
+    ------------------------------ */
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -103,49 +108,57 @@
     form input,
     form textarea {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid var(--grey-mid);
-      border-radius: 5px;
-      font-size: 1em;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--grey-light);
     }
 
     form button {
       background-color: var(--blue-bright);
       color: white;
-      padding: 14px 30px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 1.1em;
-      margin-top: 10px;
+      font-size: 1.1rem;
+      margin-top: 20px;
       width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     form button:hover {
       background-color: var(--blue-mid);
     }
 
-    /* ------------------------------------
+    /* ------------------------------
        LOCATION BOX
-    ------------------------------------ */
+    ------------------------------ */
     .location-box {
-      margin-top: 40px;
-      padding: 20px;
+      margin-top: 50px;
+      padding: 25px;
       background-color: var(--grey-light);
-      border-radius: 8px;
-      text-align: center;
+      border-radius: 10px;
       border: 1px solid var(--grey-mid);
+      text-align: center;
     }
 
-    /* ------------------------------------
+    .location-box h3 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+    }
+
+    /* ------------------------------
        FOOTER
-    ------------------------------------ */
-    footer.site-footer {
-      background-color: var(--blue-dark);
-      color: white;
+    ------------------------------ */
+    .site-footer {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -154,23 +167,27 @@
 
   <!-- HEADER -->
   <header class="site-header">
-    <h1><span class="logo-mark">LNCC</span> Like New Carpet Crew</h1>
-    <p>Low-Moisture Carpet Cleaning</p>
+    <div class="brand">
+      <span class="logo-mark">LNCC</span>
+      <span class="logo-name">Like New Carpet Crew</span>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guarantee.html">Guarantee</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- NAVIGATION -->
-  <nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="process.html">Our Process</a>
-    <a href="faq.html">FAQ</a>
-    <a href="guarantee.html">Guarantee</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <!-- CONTACT FORM CARD -->
-  <section class="card-section" id="quote-form">
+  <!-- CONTACT CARD -->
+  <section class="contact-card" id="booking">
     <h2>Free Price Estimation</h2>
+    <p class="contact-subtitle">Send us a message and we’ll get back to you quickly.</p>
 
     <form action="mailto:likenewcarpetcrew@gmail.com" method="POST" enctype="text/plain">
       <label for="name">Name</label>
@@ -188,7 +205,7 @@
     <div class="location-box">
       <h3>Our Location</h3>
       <p>Lancaster, PA</p>
-      <p> Call us at 717-824-6510</p>
+      <p>Call us at 717‑824‑6510</p>
     </div>
   </section>
 
@@ -198,6 +215,5 @@
   </footer>
 
 </body>
-
 </html>
 
