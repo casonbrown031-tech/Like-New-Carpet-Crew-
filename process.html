@@ -112,7 +112,7 @@
       margin-top: 8px;
     }
 
-    /* IMAGE SECTION – SHOW WHOLE IMAGE */
+    /* IMAGE SECTION – FULL IMAGE, LONGER, NO CROPPING */
     .big-image-section {
       background: var(--white);
       padding: 40px 20px;
@@ -126,12 +126,13 @@
     .big-image-wrapper img {
       display: block;
       width: 100%;
-      height: auto;          /* let height adjust naturally */
-      max-height: 500px;     /* cap it so it doesn’t get huge */
+      height: auto;          /* natural height */
+      max-height: 700px;     /* best-looking height */
       object-fit: contain;   /* show whole image */
+      object-position: center;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      background: #e5e5e5;   /* subtle frame behind if aspect ratio is odd */
+      background: #e5e5e5;   /* subtle frame if aspect ratio leaves space */
     }
 
     /* CTA */
