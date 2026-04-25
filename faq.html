@@ -6,9 +6,6 @@
   <title>FAQ | Like New Carpet Crew</title>
 
   <style>
-    /* ------------------------------
-       GLOBAL BRAND COLORS & RESET
-    ------------------------------ */
     :root {
       --blue-dark: #003366;
       --blue-mid: #0055aa;
@@ -26,9 +23,7 @@
       line-height: 1.6;
     }
 
-    /* ------------------------------
-       HEADER
-    ------------------------------ */
+    /* HEADER */
     .site-header {
       background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
       padding: 20px;
@@ -65,9 +60,7 @@
       color: var(--blue-bright);
     }
 
-    /* ------------------------------
-       HERO — CENTERED + BOLD
-    ------------------------------ */
+    /* HERO */
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
       text-align: center;
@@ -87,9 +80,7 @@
       margin: 0 auto 30px auto;
     }
 
-    /* ------------------------------
-       FAQ SECTION (styled like hero benefits)
-    ------------------------------ */
+    /* FAQ SECTION */
     .faq-section {
       max-width: 900px;
       margin: 40px auto;
@@ -117,9 +108,29 @@
       color: #333;
     }
 
-    /* ------------------------------
-       CTA SECTION
-    ------------------------------ */
+    /* IMAGE SECTION (MATCHES HOME + GUARANTEE + PROCESS) */
+    .image-showcase {
+      background: var(--white);
+      padding: 50px 20px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 650px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* CTA */
     .section-cta {
       text-align: center;
       padding: 60px 20px;
@@ -154,9 +165,7 @@
       color: var(--white);
     }
 
-    /* ------------------------------
-       FOOTER
-    ------------------------------ */
+    /* FOOTER */
     .site-footer {
       background: var(--blue-dark);
       color: var(--white);
@@ -183,7 +192,7 @@
         <li><a href="process.html">Our Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="guarantee.html">Guarantee</a></li>
-         <li><a href="before-after.html">Before & After</a></li>
+        <li><a href="before-after.html">Before & After</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -244,15 +253,25 @@
 
   </section>
 
+  <!-- IMAGE SECTION (NEW + MATCHING STYLE) -->
+  <section class="image-showcase">
+    <div class="image-grid">
+      <img src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/carpet1.png" alt="FAQ Image 1">
+      <img src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/carpet2.png" alt="FAQ Image 2">
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section-cta">
     <h2>Still Have Questions?</h2>
     <p>We’re happy to talk through your specific carpet issues and recommend a solution.</p>
+  </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
   </footer>
 
 </body>
-
 </html>
+
