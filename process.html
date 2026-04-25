@@ -112,7 +112,7 @@
       margin-top: 8px;
     }
 
-    /* IMAGE SECTION – FULL IMAGE, LONGER, NO CROPPING */
+    /* IMAGE SECTION — NATURAL SIZE */
     .big-image-section {
       background: var(--white);
       padding: 40px 20px;
@@ -124,15 +124,10 @@
     }
 
     .big-image-wrapper img {
-      display: block;
-      width: 100%;
-      height: auto;          /* natural height */
-      max-height: 700px;     /* best-looking height */
-      object-fit: contain;   /* show whole image */
-      object-position: center;
+      width: 100%;   /* scales to container */
+      height: auto;  /* keeps natural proportions */
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      background: #e5e5e5;   /* subtle frame if aspect ratio leaves space */
     }
 
     /* CTA */
