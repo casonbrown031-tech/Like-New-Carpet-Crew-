@@ -112,19 +112,23 @@
       margin-top: 8px;
     }
 
-    /* BIG IMAGE SECTION */
+    /* SMALLER IMAGE SECTION (MATCHES HOME PAGE STYLE) */
     .big-image-section {
-      width: 100%;
-      max-height: 600px;
-      overflow: hidden;
-      margin: 40px 0;
+      background: var(--white);
+      padding: 50px 20px;
     }
 
-    .big-image-section img {
+    .big-image-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .big-image-wrapper img {
       width: 100%;
-      height: 600px;
+      height: 650px; /* SAME SIZE AS HOME PAGE IMAGES */
       object-fit: cover;
-      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     /* CTA */
@@ -238,9 +242,11 @@
     </ol>
   </section>
 
-  <!-- BIG IMAGE SECTION (NOW UNDER THE STEPS) -->
+  <!-- SMALLER IMAGE SECTION (UNDER STEPS) -->
   <section class="big-image-section">
-    <img src="https://via.placeholder.com/1600x900" alt="Process Image">
+    <div class="big-image-wrapper">
+      <img src="https://via.placeholder.com/1600x900" alt="Process Image">
+    </div>
   </section>
 
   <!-- CTA -->
@@ -256,3 +262,4 @@
 
 </body>
 </html>
+
