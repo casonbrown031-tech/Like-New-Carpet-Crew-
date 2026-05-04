@@ -123,10 +123,12 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* Make last image frame taller so the image fits perfectly */
+    /* Last image: show full image, no zoom */
     .taller-img {
-      height: 650px; /* Adjusted frame height */
-      object-fit: cover;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
     }
 
     .ba-label {
@@ -231,3 +233,4 @@
 
 </body>
 </html>
+
