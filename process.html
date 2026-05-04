@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-page="process">
+<html lang="en" data-page="before-after">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Process | Like New Carpet Crew</title>
+  <title>Before & After | Like New Carpet Crew</title>
 
   <style>
     :root {
@@ -64,104 +64,81 @@
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
       text-align: center;
-      padding: 80px 20px;
+      padding: 70px 20px;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      color: var(--blue-dark);
-      margin-bottom: 15px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: #333;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-    }
-
-    /* PROCESS STEPS */
-    .process-steps {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .process-steps ol {
-      list-style: none;
-      padding: 0;
-    }
-
-    .process-steps li {
-      background: var(--white);
-      padding: 18px 20px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border-left: 4px solid var(--blue-mid);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
-
-    .process-steps h3 {
-      margin-top: 0;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
       color: var(--blue-dark);
     }
 
-    .step-note {
-      font-size: 0.95rem;
-      color: #444;
-      margin-top: 8px;
-    }
-
-    /* IMAGE SECTION */
-    .big-image-section {
-      background: var(--white);
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .big-image-wrapper img {
-      width: 100%;
+    .hero p {
+      font-size: 1.2rem;
       max-width: 700px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      display: block;
       margin: 0 auto;
+      color: #333;
     }
 
-    /* CTA */
-    .section-cta {
-      text-align: center;
+    /* BEFORE & AFTER SECTION */
+    .ba-section {
       padding: 60px 20px;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin: 8px;
-    }
-
-    .btn-primary {
-      background: var(--blue-mid);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-dark);
-    }
-
-    .btn-secondary {
       background: var(--white);
-      color: var(--blue-mid);
-      border: 2px solid var(--blue-mid);
     }
 
-    .btn-secondary:hover {
-      background: var(--blue-mid);
-      color: var(--white);
+    .ba-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 50px;
+    }
+
+    .ba-card {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-mid);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .ba-card h3, .ba-card h4 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--blue-dark);
+      font-size: 1.8rem;
+    }
+
+    /* STACK IMAGES VERTICALLY */
+    .ba-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    /* Default images */
+    .ba-images img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Last image: natural proportions */
+    .taller-img {
+      width: 100%;
+      height: auto;       /* ← THIS is the fix */
+      object-fit: contain; /* show full image */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .ba-label {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 8px;
+      color: var(--blue-mid);
+      font-size: 1.2rem;
     }
 
     /* FOOTER */
@@ -170,9 +147,9 @@
       color: var(--white);
       padding: 40px 20px;
       text-align: center;
+      margin-top: 60px;
     }
   </style>
-
 </head>
 
 <body>
@@ -199,58 +176,56 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>How Our Low-Moisture Process Works</h1>
-    <p class="hero-subtitle">
-      We follow a clear, professional process so you know exactly what to expect from start to finish.
-    </p>
+    <h1>Before & After Results</h1>
+    <p>Real transformations from real homes. See what low‑moisture cleaning can do.</p>
   </section>
 
-  <!-- PROCESS STEPS -->
-  <section class="process-steps">
-    <ol>
-      <li>
-        <h3>1. Inspection & Assessment</h3>
-        <p>We walk through your space, ask about problem areas, and inspect the carpet type, fiber, and existing stains.</p>
-        <p class="step-note">This helps us choose the right chemistry and method for your carpet.</p>
-      </li>
+  <!-- BEFORE & AFTER GALLERY -->
+  <section class="ba-section">
+    <div class="ba-grid">
 
-      <li>
-        <h3>2. Targeted Pre-Treatment</h3>
-        <p>We apply professional cleaning solutions to traffic lanes, spots, and stains to loosen soils before agitation.</p>
-        <p class="step-note">Cleaning is chemistry — not flooding.</p>
-      </li>
+      <!-- CARD 1 -->
+      <div class="ba-card">
+        <h3>Living Room Refresh</h3>
+        <div class="ba-images">
+          <div>
+            <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/unnamed.jpg?raw=true">
+            <div class="ba-label">Before</div>
+          </div>
+          <div>
+            <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/images%20.jpg?raw=true">
+            <div class="ba-label">After</div>
+          </div>
+        </div>
+      </div>
 
-      <li>
-        <h3>3. Mechanical Agitation</h3>
-        <p>Using specialized equipment, we gently agitate the carpet fibers to lift dirt and suspend soil for removal.</p>
-        <p class="step-note">This boosts cleaning power without soaking the carpet.</p>
-      </li>
+      <!-- CARD 2 -->
+      <div class="ba-card">
+        <h3>High‑Traffic Rooms</h3>
+        <div class="ba-images">
+          <div>
+            <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/unnamed%20(4).jpg?raw=true">
+            <div class="ba-label">Before</div>
+          </div>
+          <div>
+            <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/unnamed%20(5).jpg?raw=true">
+            <div class="ba-label">After</div>
+          </div>
+        </div>
+      </div>
 
-      <li>
-        <h3>4. Low-Moisture Extraction</h3>
-        <p>We extract the loosened soil and moisture using low-moisture methods that avoid oversaturation.</p>
-        <p class="step-note">Deep cleaning without gallons of leftover water.</p>
-      </li>
+      <!-- CARD 3 -->
+      <div class="ba-card">
+        <h4>Commercial Cleaning</h4>
+        <div class="ba-images">
+          <div>
+            <img class="taller-img" src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/Results%20you%20cant%20deny%20(1).jpg?raw=true">
+            <div class="ba-label">Before</div>
+          </div>
+        </div>
+      </div>
 
-      <li>
-        <h3>5. Neutralization & Grooming</h3>
-        <p>We neutralize the carpet to remove any sticky residue, then groom fibers so they dry soft and even.</p>
-        <p class="step-note">The result: clean, soft carpets with fast drying.</p>
-      </li>
-    </ol>
-  </section>
-
-  <!-- IMAGE SECTION -->
-  <section class="big-image-section">
-    <div class="big-image-wrapper">
-      <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/unnamed%20(7).jpg?raw=true">
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section-cta">
-    <h2>Ready to See the Process in Your Home?</h2>
-    <p>We’ll apply this same step-by-step system to your space.</p>
   </section>
 
   <!-- FOOTER -->
