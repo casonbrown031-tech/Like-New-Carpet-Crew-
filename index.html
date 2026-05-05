@@ -36,6 +36,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
     }
 
     .logo-mark {
@@ -47,6 +53,7 @@
       margin-right: 10px;
     }
 
+    /* Desktop Nav */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -66,23 +73,61 @@
     }
 
     /* ------------------------------
+       MOBILE MENU
+    ------------------------------ */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--blue-dark);
+      width: 100%;
+      padding: 15px 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 1000;
+      animation: slideDown 0.3s ease;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav a:hover {
+      background: var(--blue-mid);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ------------------------------
        HERO
     ------------------------------ */
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      color: var(--blue-dark);
+      font-size: 2.4rem;
       margin-bottom: 15px;
     }
 
     .hero-subtitle {
-      font-size: 1.3rem;
-      color: #333;
+      font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 30px auto;
     }
@@ -102,10 +147,6 @@
       border-left: 4px solid var(--blue-mid);
       border-radius: 6px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
-
-    .hero-actions {
-      margin-top: 30px;
     }
 
     .btn {
@@ -133,21 +174,20 @@
     ------------------------------ */
     .image-showcase {
       background: var(--white);
-      padding: 70px 20px;
+      padding: 60px 20px;
     }
 
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .image-grid img {
       width: 100%;
-      height: 650px;
-      object-fit: cover;
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
@@ -158,30 +198,17 @@
     .promo-section {
       background: linear-gradient(180deg, #e6e6e6, #f5f5f5);
       text-align: center;
-      padding: 70px 20px;
+      padding: 60px 20px;
     }
 
     .promo-section h2 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       margin-bottom: 10px;
-      color: var(--blue-dark);
     }
 
     /* ------------------------------
        SEASONAL TIPS
     ------------------------------ */
-    .seasonal-section {
-      background: var(--white);
-      padding: 70px 20px;
-    }
-
-    .seasonal-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
     .seasonal-card {
       background: var(--grey-light);
       border: 1px solid var(--grey-mid);
@@ -189,6 +216,8 @@
       padding: 25px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 40px auto;
     }
 
     .seasonal-card p {
@@ -197,9 +226,6 @@
       color: var(--blue-dark);
     }
 
-    /* ------------------------------
-       CTA BUTTON (GLOBAL)
-    ------------------------------ */
     .cta-button {
       background-color: var(--blue-bright);
       color: white;
@@ -225,9 +251,27 @@
       padding: 40px 20px;
       text-align: center;
     }
+
+    /* ------------------------------
+       RESPONSIVE BREAKPOINTS
+    ------------------------------ */
+    @media (max-width: 800px) {
+      .site-nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
 
   <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
     function toggleFiber() {
       const text = document.getElementById("fiber-text");
       text.style.display = text.style.display === "none" ? "block" : "none";
@@ -249,6 +293,10 @@
       <span class="logo-name">Like New Carpet Crew</span>
     </div>
 
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+
+    <!-- Desktop Nav -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -256,9 +304,20 @@
         <li><a href="process.html">Our Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="guarantee.html">Guarantee</a></li>
-         <li><a href="before-after.html">Before & After</a></li>
+        <li><a href="before-after.html">Before & After</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
+    </nav>
+
+    <!-- Mobile Dropdown Nav -->
+    <nav id="mobileMenu" class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Our Process</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="before-after.html">Before & After</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -306,25 +365,24 @@
   </section>
 
   <!-- SEASONAL TIPS -->
-<div class="seasonal-card">
-  <h3>Deep Cleaning Technology</h3>
+  <div class="seasonal-card">
+    <h3>Deep Cleaning Technology</h3>
 
-  <div style="display:flex; justify-content:center; gap:15px; margin-top:10px;">
-    <button class="cta-button" onclick="toggleFiber()">Fiber Protection</button>
-    <button class="cta-button" onclick="toggleCRB()">CRB Process</button>
+    <div style="display:flex; justify-content:center; gap:15px; margin-top:10px; flex-wrap:wrap;">
+      <button class="cta-button" onclick="toggleFiber()">Fiber Protection</button>
+      <button class="cta-button" onclick="toggleCRB()">CRB Process</button>
+    </div>
+
+    <p id="fiber-text" style="display:none;">
+      Adds a protective barrier to help carpets resist future stains, salt, and moisture.
+    </p>
+
+    <p id="crb-text" style="display:none;">
+      Our low-moisture cleaning process delivers a deep, restorative clean without soaking your carpets.
+      CRB (Counter-Rotating Brush) technology lifts, separates, and revives carpet fibers at a level
+      traditional steam cleaners simply can’t reach.
+    </p>
   </div>
-
-  <p id="fiber-text" style="display:none;">
-    Adds a protective barrier to help carpets resist future stains, salt, and moisture.
-  </p>
-
-  <p id="crb-text" style="display:none;">
-    Our low-moisture cleaning process delivers a deep, restorative clean without soaking your carpets.
-    CRB (Counter-Rotating Brush) technology lifts, separates, and revives carpet fibers at a level
-    traditional steam cleaners simply can’t reach.
-  </p>
-</div>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -333,29 +391,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
