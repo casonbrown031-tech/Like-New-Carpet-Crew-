@@ -23,13 +23,21 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
     .site-header {
       background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
       padding: 20px;
       color: var(--white);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
       align-items: center;
     }
 
@@ -42,6 +50,7 @@
       margin-right: 10px;
     }
 
+    /* Desktop Nav */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -60,7 +69,49 @@
       color: var(--blue-bright);
     }
 
-    /* HERO */
+    /* ------------------------------
+       MOBILE MENU
+    ------------------------------ */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--blue-dark);
+      width: 100%;
+      padding: 15px 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 1000;
+      animation: slideDown 0.3s ease;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav a:hover {
+      background: var(--blue-mid);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ------------------------------
+       HERO
+    ------------------------------ */
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
       text-align: center;
@@ -80,7 +131,9 @@
       margin: 0 auto 30px auto;
     }
 
-    /* FAQ SECTION */
+    /* ------------------------------
+       FAQ SECTION
+    ------------------------------ */
     .faq-section {
       max-width: 900px;
       margin: 40px auto;
@@ -108,29 +161,9 @@
       color: #333;
     }
 
-    /* IMAGE SECTION (MATCHES HOME + GUARANTEE + PROCESS) */
-    .image-showcase {
-      background: var(--white);
-      padding: 50px 20px;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: 650px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    /* CTA */
+    /* ------------------------------
+       CTA
+    ------------------------------ */
     .section-cta {
       text-align: center;
       padding: 60px 20px;
@@ -165,14 +198,36 @@
       color: var(--white);
     }
 
-    /* FOOTER */
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
     .site-footer {
       background: var(--blue-dark);
       color: var(--white);
       padding: 40px 20px;
       text-align: center;
     }
+
+    /* ------------------------------
+       RESPONSIVE BREAKPOINTS
+    ------------------------------ */
+    @media (max-width: 800px) {
+      .site-nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 
 </head>
 
@@ -185,16 +240,31 @@
       <span class="logo-name">Like New Carpet Crew</span>
     </div>
 
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+
+    <!-- Desktop Nav -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="process.html">Our Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a class="active" href="faq.html">FAQ</a></li>
         <li><a href="guarantee.html">Guarantee</a></li>
         <li><a href="before-after.html">Before & After</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
+    </nav>
+
+    <!-- Mobile Dropdown Nav -->
+    <nav id="mobileMenu" class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Our Process</a>
+      <a class="active" href="faq.html">FAQ</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="before-after.html">Before & After</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -233,7 +303,7 @@
     <div class="faq-item">
       <div class="faq-question">Is low-moisture cleaning as effective as steam cleaning?</div>
       <div class="faq-answer">
-        <p>We use mechanical agitation to scrub the dirt out of the fibers, giving you a deep clean that dries in an hour without soaking your carpets </p>
+        <p>We use mechanical agitation to scrub the dirt out of the fibers, giving you a deep clean that dries fast without soaking your carpets.</p>
       </div>
     </div>
 
@@ -247,12 +317,11 @@
     <div class="faq-item">
       <div class="faq-question">How far in advance should I book?</div>
       <div class="faq-answer">
-        <p>Fast Response: Same-Day and Emergency Services Regularly Available</p>
+        <p>Fast response: same-day and emergency services are regularly available.</p>
       </div>
     </div>
 
   </section>
-
 
   <!-- CTA -->
   <section class="section-cta">
@@ -267,4 +336,3 @@
 
 </body>
 </html>
-
