@@ -23,13 +23,21 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
     .site-header {
       background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
       padding: 20px;
       color: var(--white);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
       align-items: center;
     }
 
@@ -42,6 +50,7 @@
       margin-right: 10px;
     }
 
+    /* Desktop Nav */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -60,7 +69,49 @@
       color: var(--blue-bright);
     }
 
-    /* HERO */
+    /* ------------------------------
+       MOBILE MENU
+    ------------------------------ */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--blue-dark);
+      width: 100%;
+      padding: 15px 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 1000;
+      animation: slideDown 0.3s ease;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav a:hover {
+      background: var(--blue-mid);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ------------------------------
+       HERO
+    ------------------------------ */
     .hero {
       background: linear-gradient(180deg, var(--white), var(--grey-light));
       text-align: center;
@@ -80,7 +131,9 @@
       color: #333;
     }
 
-    /* PROCESS STEPS */
+    /* ------------------------------
+       PROCESS STEPS
+    ------------------------------ */
     .process-steps {
       max-width: 900px;
       margin: 50px auto;
@@ -112,7 +165,9 @@
       margin-top: 8px;
     }
 
-    /* BEFORE/AFTER CARD */
+    /* ------------------------------
+       BEFORE/AFTER CARD
+    ------------------------------ */
     .ba-card {
       background: var(--grey-light);
       border: 1px solid var(--grey-mid);
@@ -140,7 +195,9 @@
       font-size: 1.2rem;
     }
 
-    /* CTA */
+    /* ------------------------------
+       CTA
+    ------------------------------ */
     .section-cta {
       text-align: center;
       padding: 60px 20px;
@@ -162,7 +219,9 @@
       background-color: var(--blue-mid);
     }
 
-    /* FOOTER */
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
     .site-footer {
       background: var(--blue-dark);
       color: var(--white);
@@ -170,7 +229,27 @@
       text-align: center;
       margin-top: 40px;
     }
+
+    /* ------------------------------
+       RESPONSIVE BREAKPOINTS
+    ------------------------------ */
+    @media (max-width: 800px) {
+      .site-nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </head>
 
 <body>
@@ -182,16 +261,31 @@
       <span class="logo-name">Like New Carpet Crew</span>
     </div>
 
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+
+    <!-- Desktop Nav -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="process.html">Our Process</a></li>
+        <li><a class="active" href="process.html">Our Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="guarantee.html">Guarantee</a></li>
         <li><a href="before-after.html">Before & After</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
+    </nav>
+
+    <!-- Mobile Dropdown Nav -->
+    <nav id="mobileMenu" class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="process.html">Our Process</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="before-after.html">Before & After</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -238,7 +332,6 @@
 
   <!-- BEFORE/AFTER CARD -->
   <div class="ba-card">
-    <h4></h4>
     <div class="ba-images">
       <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/unnamed%20(7).jpg?raw=true">
       <div class="ba-label"></div>
