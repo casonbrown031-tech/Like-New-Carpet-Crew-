@@ -36,6 +36,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .logo-mark {
@@ -44,9 +51,9 @@
       padding: 6px 10px;
       border-radius: 4px;
       font-weight: bold;
-      margin-right: 10px;
     }
 
+    /* Desktop Nav */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -63,6 +70,48 @@
 
     .site-nav a:hover {
       color: var(--blue-bright);
+    }
+
+    /* ------------------------------
+       MOBILE NAV
+    ------------------------------ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+
+    /* Mobile dropdown menu */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--blue-dark);
+      width: 100%;
+      padding: 15px 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 10;
+    }
+
+    .mobile-nav a {
+      color: var(--white);
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+    }
+
+    .mobile-nav a:hover {
+      background: var(--blue-mid);
     }
 
     /* ------------------------------
@@ -91,9 +140,6 @@
       font-size: 1.1rem;
     }
 
-    /* ------------------------------
-       FORM
-    ------------------------------ */
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -132,9 +178,6 @@
       background-color: var(--blue-mid);
     }
 
-    /* ------------------------------
-       LOCATION BOX
-    ------------------------------ */
     .location-box {
       margin-top: 50px;
       padding: 25px;
@@ -160,6 +203,19 @@
       text-align: center;
       margin-top: 60px;
     }
+
+    /* ------------------------------
+       RESPONSIVE RULES
+    ------------------------------ */
+    @media (max-width: 850px) {
+      .site-nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 
@@ -172,6 +228,14 @@
       <span class="logo-name">Like New Carpet Crew</span>
     </div>
 
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Desktop Nav -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -179,9 +243,20 @@
         <li><a href="process.html">Our Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="guarantee.html">Guarantee</a></li>
-         <li><a href="before-after.html">Before & After</a></li>
+        <li><a href="before-after.html">Before & After</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
+    </nav>
+
+    <!-- Mobile Dropdown Nav -->
+    <nav class="mobile-nav" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Our Process</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="before-after.html">Before & After</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -214,6 +289,13 @@
   <footer class="site-footer">
     <p>&copy; 2025 Like New Carpet Crew. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 
 </body>
 </html>
