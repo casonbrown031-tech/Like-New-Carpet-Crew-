@@ -100,7 +100,7 @@
       width: 100%;
       padding: 15px 0;
       position: absolute;
-      top: 70px;
+      top: 100%; /* FIXED */
       left: 0;
       z-index: 1000;
       animation: slideDown 0.3s ease;
@@ -252,8 +252,18 @@
       const menu = document.getElementById('mobileMenu');
       const button = document.getElementById('menuToggleButton');
       const isOpen = menu.classList.toggle('open');
-      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.setAttribute('aria-expanded', isOpen);
     }
+
+    // Auto-close menu when clicking a link
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+          document.getElementById("mobileMenu").classList.remove("open");
+          document.getElementById("menuToggleButton").setAttribute("aria-expanded", "false");
+        });
+      });
+    });
   </script>
 </head>
 
@@ -274,6 +284,7 @@
       aria-label="Toggle navigation menu"
       aria-expanded="false"
       aria-controls="mobileMenu"
+      onclick="toggleMobileMenu()"
     >
       ☰
     </button>
@@ -292,7 +303,7 @@
     </nav>
 
     <!-- Mobile Dropdown Nav -->
- <nav id="mobileMenu" class="mobile-nav">
+    <nav id="mobileMenu" class="mobile-nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="process.html">Our Process</a>
@@ -302,6 +313,7 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <!-- PAGE HEADER -->
   <section class="page-header" aria-labelledby="servicesHeading">
     <h1 id="servicesHeading">Our Carpet Cleaning Services</h1>
