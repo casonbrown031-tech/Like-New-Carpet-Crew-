@@ -1,9 +1,10 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" data-page="services">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Like New Carpet Crew</title>
+  <meta name="description" content="Professional carpet cleaning services including residential, commercial, upholstery, and pet stain removal. Fast-drying, science-based cleaning for homes and businesses.">
 
   <style>
     :root {
@@ -50,6 +51,10 @@
       margin-right: 10px;
     }
 
+    .logo-name {
+      font-weight: 600;
+    }
+
     /* Desktop Nav */
     .site-nav ul {
       list-style: none;
@@ -66,7 +71,7 @@
     }
 
     .site-nav a:hover,
-    .active {
+    .site-nav a.active {
       color: var(--blue-bright);
     }
 
@@ -78,6 +83,14 @@
       font-size: 28px;
       cursor: pointer;
       user-select: none;
+      background: none;
+      border: none;
+      color: var(--white);
+    }
+
+    .hamburger:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 2px;
     }
 
     .mobile-nav {
@@ -93,15 +106,20 @@
       animation: slideDown 0.3s ease;
     }
 
+    .mobile-nav.open {
+      display: flex;
+    }
+
     .mobile-nav a {
-      color: white;
+      color: var(--white);
       padding: 12px 20px;
       text-decoration: none;
       font-size: 1.1rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .mobile-nav a:hover {
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
       background: var(--blue-mid);
     }
 
@@ -138,6 +156,13 @@
       background: var(--white);
     }
 
+    .services-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--blue-dark);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -167,8 +192,10 @@
 
     .service-card img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
       margin-top: 15px;
+      display: block;
     }
 
     .cta-actions {
@@ -222,8 +249,10 @@
 
   <script>
     function toggleMobileMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      const menu = document.getElementById('mobileMenu');
+      const button = document.getElementById('menuToggleButton');
+      const isOpen = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
   </script>
 </head>
@@ -233,15 +262,24 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="brand">
-      <span class="logo-mark">LNCC</span>
+      <span class="logo-mark" aria-hidden="true">LNCC</span>
       <span class="logo-name">Like New Carpet Crew</span>
     </div>
 
-    <!-- Hamburger Icon -->
-    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+    <!-- Hamburger Button -->
+    <button
+      id="menuToggleButton"
+      class="hamburger"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      ☰
+    </button>
 
     <!-- Desktop Nav -->
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a class="active" href="services.html">Services</a></li>
@@ -254,7 +292,11 @@
     </nav>
 
     <!-- Mobile Dropdown Nav -->
-    <nav id="mobileMenu" class="mobile-nav">
+    <nav
+      id="mobileMenu"
+      class="mobile-nav"
+      aria-label="Mobile navigation"
+    >
       <a href="index.html">Home</a>
       <a class="active" href="services.html">Services</a>
       <a href="process.html">Our Process</a>
@@ -266,32 +308,52 @@
   </header>
 
   <!-- PAGE HEADER -->
-  <header class="page-header">
-    <h1>Our Carpet Cleaning Services</h1>
+  <section class="page-header" aria-labelledby="servicesHeading">
+    <h1 id="servicesHeading">Our Carpet Cleaning Services</h1>
     <p>Smart, science-based cleaning for homes, apartments, and businesses.</p>
-  </header>
+  </section>
 
   <!-- SERVICES SECTION -->
-  <section class="services-section">
+  <section class="services-section" aria-label="Service offerings">
+    <h2>What We Offer</h2>
+
     <div class="services-grid">
 
-      <div class="service-card">
+      <article class="service-card">
         <h3>Residential and Commercial Carpet Cleaning</h3>
-        <p>Deep-cleaning for homes using low-moisture methods that protect fibers and dry fast.</p>
-        <img src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/apartment.jpg" alt="Residential Carpet Cleaning">
-      </div>
+        <p>Deep-cleaning for homes and businesses using low-moisture methods that protect fibers and dry fast.</p>
+        <img
+          src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/apartment.jpg"
+          alt="Freshly cleaned carpet in a modern apartment living room"
+          loading="lazy"
+          width="800"
+          height="533"
+        >
+      </article>
 
-      <div class="service-card">
-        <h3>Furniture Upholstery</h3>
-        <p>We offer professional upholstery services for sofas, chairs, recliners, and more.</p>
-        <img src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/images.webp?raw=true" alt="Furniture Upholstery Cleaning">
-      </div>
+      <article class="service-card">
+        <h3>Furniture Upholstery Cleaning</h3>
+        <p>Professional upholstery cleaning for sofas, chairs, recliners, and more to remove dirt, oils, and everyday wear.</p>
+        <img
+          src="https://github.com/casonbrown031-tech/Like-New-Carpet-Crew-/blob/main/Media/images.webp?raw=true"
+          alt="Technician cleaning a fabric sofa with professional upholstery equipment"
+          loading="lazy"
+          width="800"
+          height="533"
+        >
+      </article>
 
-      <div class="service-card">
+      <article class="service-card">
         <h3>Pet Odor & Stain Removal</h3>
-        <p>Targeted chemistry and agitation to remove pet stains and odors without damaging carpet.</p>
-        <img src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/dog.jpg" alt="Pet Odor & Stain Removal">
-      </div>
+        <p>Targeted chemistry and agitation to remove pet stains and odors while protecting carpet fibers and backing.</p>
+        <img
+          src="https://raw.githubusercontent.com/casonbrown031-tech/Like-New-Carpet-Crew-/refs/heads/main/media/dog.jpg"
+          alt="Dog resting on a clean carpet after pet stain removal"
+          loading="lazy"
+          width="800"
+          height="533"
+        >
+      </article>
 
     </div>
 
@@ -307,4 +369,3 @@
 
 </body>
 </html>
-
